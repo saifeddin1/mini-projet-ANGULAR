@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <th></th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Date</th>
+          <th></th>
+        </thead>
+        <tbody *ngFor="let post of posts">
+          <tr>
+            <TD>{{ post.idPost }}</TD>
+            <td>{{ post.title }}</td>
+            <td>{{ post.author }}</td>
+            <td>{{ post.createdAt  | date:"dd/MM/yyyy"}}</td>
+            <td><a class="btn btn-danger" (click)="deletePost(post)">Delete</a></td>
+            <td><a class="btn btn-info" [routerLink]="['/update-post',post.idPost]">Modifier</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
